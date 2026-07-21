@@ -7,9 +7,9 @@
 // Replace with your Wompi payment links
 // ============================================
 const PAYMENT_LINKS = {
-    'es': 'https://checkout.wompi.co/l/TU_LINK_ES',
-    'en': 'https://checkout.wompi.co/l/TU_LINK_EN',
-    'fr': 'https://checkout.wompi.co/l/TU_LINK_FR'
+    'es': 'https://checkout.wompi.co/l/VPOS_axGQjW',
+    'en': 'https://checkout.wompi.co/l/VPOS_axGQjW',
+    'fr': 'https://checkout.wompi.co/l/VPOS_axGQjW'
 };
 
 // Formspree endpoint for order capture
