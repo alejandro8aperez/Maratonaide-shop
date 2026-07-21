@@ -1,85 +1,103 @@
-// Stripe Checkout Integration
 // ============================================
-// CONFIGURATION: Replace with your Stripe keys
+// MARATONaide Shop — Checkout
 // ============================================
 
-const STRIPE_CONFIG = {
-    // Get these from https://dashboard.stripe.com/apikeys
-    publishableKey: 'pk_test_YOUR_KEY_HERE',
-
-    // Price IDs from Stripe Dashboard > Products
-    prices: {
-        'es': 'price_REPLACE_WITH_STRIPE_PRICE_ID_ES',
-        'en': 'price_REPLACE_WITH_STRIPE_PRICE_ID_EN',
-        'fr': 'price_REPLACE_WITH_STRIPE_PRICE_ID_FR'
-    },
-
-    // Your backend endpoint that creates Stripe Checkout sessions
-    checkoutEndpoint: '/api/checkout'
+// ============================================
+// CONFIGURATION
+// Replace with your Wompi payment links
+// ============================================
+const PAYMENT_LINKS = {
+    'es': 'https://checkout.wompi.co/l/TU_LINK_ES',
+    'en': 'https://checkout.wompi.co/l/TU_LINK_EN',
+    'fr': 'https://checkout.wompi.co/l/TU_LINK_FR'
 };
 
-// Initialize Stripe (uncomment when you have your key)
-// const stripe = Stripe(STRIPE_CONFIG.publishableKey);
+// Formspree endpoint for order capture
+// Create free form at https://formspree.io
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
 
-async function checkout(lang) {
-    // ============================================
-    // OPTION A: Client-side redirect (simple, no backend needed)
-    // Use this if you set up Stripe Payment Links
-    // ============================================
+// ============================================
+// MODAL
+// ============================================
+function checkout(lang) {
+    document.getElementById('order-lang').value = lang;
+    document.getElementById('order-product').value = 'maratonaide-' + lang;
+    document.getElementById('order-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
-    const paymentLinks = {
-        'es': 'https://buy.stripe.com/YOUR_PAYMENT_LINK_ES',
-        'en': 'https://buy.stripe.com/YOUR_PAYMENT_LINK_EN',
-        'fr': 'https://buy.stripe.com/YOUR_PAYMENT_LINK_FR'
-    };
+    // Focus first input
+    setTimeout(() => document.getElementById('order-name').focus(), 200);
+}
 
-    // Redirect to Stripe Payment Link
-    window.open(paymentLinks[lang], '_blank');
+function closeModal() {
+    document.getElementById('order-modal').style.display = 'none';
+    document.body.style.overflow = '';
+}
 
-    // ============================================
-    // OPTION B: Server-side checkout (recommended)
-    // Uncomment this if you have a backend endpoint
-    // ============================================
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
 
-    /*
+// ============================================
+// FORM SUBMISSION
+// ============================================
+async function submitOrder(e) {
+    e.preventDefault();
+
+    const lang = document.getElementById('order-lang').value;
+    const name = document.getElementById('order-name').value.trim();
+    const email = document.getElementById('order-email').value.trim();
+    const phone = document.getElementById('order-phone').value.trim();
+    const address = document.getElementById('order-address').value.trim();
+    const city = document.getElementById('order-city').value.trim();
+    const dept = document.getElementById('order-dept').value.trim();
+
+    if (!name || !email || !phone || !address || !city) {
+        alert(lang === 'es' ? 'Por favor completa todos los campos obligatorios.'
+            : lang === 'en' ? 'Please fill in all required fields.'
+            : 'Veuillez remplir tous les champs obligatoires.');
+        return;
+    }
+
+    const btn = document.querySelector('.modal-submit');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '...';
+    btn.disabled = true;
+
     try {
-        const response = await fetch(STRIPE_CONFIG.checkoutEndpoint, {
+        // Send order to Formspree (saves to your email/dashboard)
+        await fetch(FORMSPREE_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                priceId: STRIPE_CONFIG.prices[lang],
-                lang: lang
+                _subject: `Nuevo pedido MARATONaide [${lang.toUpperCase()}]`,
+                nombre: name,
+                email: email,
+                telefono: phone,
+                direccion: address,
+                ciudad: city,
+                departamento: dept,
+                idioma: lang.toUpperCase(),
+                producto: 'MARATONaide — PDF + EPUB',
+                precio: '$9.99 USD'
             })
         });
 
-        const session = await response.json();
+        // Redirect to Wompi payment
+        window.open(PAYMENT_LINKS[lang], '_blank');
 
-        const stripe = Stripe(STRIPE_CONFIG.publishableKey);
-        await stripe.redirectToCheckout({ sessionId: session.id });
+        // Reset form and close modal
+        document.getElementById('order-form').reset();
+        closeModal();
+
     } catch (error) {
-        console.error('Checkout error:', error);
-        alert('Error al procesar el pago. Por favor, intenta de nuevo.');
+        console.error('Order error:', error);
+        // Still redirect to payment even if form capture fails
+        window.open(PAYMENT_LINKS[lang], '_blank');
+        closeModal();
     }
-    */
-}
 
-// ============================================
-// SETUP INSTRUCTIONS:
-//
-// 1. Create a Stripe account at https://stripe.com
-// 2. Create 3 products (one per language) in Stripe Dashboard > Products
-// 3. Note the Price IDs for each product
-// 4. Create Payment Links or set up a backend checkout endpoint
-// 5. Replace the placeholder values above
-//
-// EASIEST SETUP (no backend):
-//   - Go to Stripe Dashboard > Payment Links
-//   - Create a link for each language ($9.99 USD)
-//   - Paste the links in the paymentLinks object above
-//
-// RECOMMENDED SETUP (with backend):
-//   - Create a simple Node.js/Express or serverless function
-//   - Use stripe.checkout.sessions.create()
-//   - Pass the session ID back to the client
-//   - See: https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=checkout
-// ============================================
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+}

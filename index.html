@@ -208,6 +208,63 @@
         </div>
     </footer>
 
+    <!-- ORDER MODAL -->
+    <div id="order-modal" class="modal" style="display:none;">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title" data-es="Completar pedido" data-en="Complete order" data-fr="Finaliser la commande">Completar pedido</h3>
+            <p class="modal-subtitle" data-es="Completa tus datos para recibir el libro por correo electrónico." data-en="Fill in your details to receive the book by email." data-fr="Remplissez vos coordonnées pour recevoir le livre par e-mail.">Completa tus datos para recibir el libro por correo electrónico.</p>
+
+            <form id="order-form" onsubmit="submitOrder(event)">
+                <input type="hidden" id="order-lang" value="es">
+                <input type="hidden" id="order-product" value="">
+
+                <div class="form-group">
+                    <label for="order-name" data-es="Nombre completo" data-en="Full name" data-fr="Nom complet">Nombre completo</label>
+                    <input type="text" id="order-name" required placeholder="Tu nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="order-email" data-es="Correo electrónico" data-en="Email" data-fr="E-mail">Correo electrónico</label>
+                    <input type="email" id="order-email" required placeholder="tu@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="order-phone" data-es="Teléfono" data-en="Phone" data-fr="Téléphone">Teléfono</label>
+                    <input type="tel" id="order-phone" required placeholder="+57 300 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="order-address" data-es="Dirección" data-en="Address" data-fr="Adresse">Dirección</label>
+                    <input type="text" id="order-address" required placeholder="Calle, número, apto">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="order-city" data-es="Ciudad" data-en="City" data-fr="Ville">Ciudad</label>
+                        <input type="text" id="order-city" required placeholder="Medellín">
+                    </div>
+                    <div class="form-group">
+                        <label for="order-dept" data-es="Departamento" data-en="Department" data-fr="Département">Departamento</label>
+                        <input type="text" id="order-dept" placeholder="Antioquia">
+                    </div>
+                </div>
+
+                <div class="form-summary">
+                    <span data-es="Total:" data-en="Total:" data-fr="Total :">Total:</span>
+                    <span class="form-total">$9.99 USD</span>
+                </div>
+
+                <button type="submit" class="buy-btn modal-submit">
+                    <span data-es="Continuar al pago" data-en="Proceed to payment" data-fr="Procéder au paiement">Continuar al pago</span>
+                </button>
+
+                <p class="modal-note" data-es="Serás redirigido a Wompi para completar el pago con tarjeta, PSE o Nequi." data-en="You will be redirected to Wompi to pay with card, PSE or Nequi." data-fr="Vous serez redirigé vers Wompi pour payer par carte, PSE ou Nequi.">Serás redirigido a Wompi para completar el pago con tarjeta, PSE o Nequi.</p>
+            </form>
+        </div>
+    </div>
+
     <script src="js/lang.js"></script>
     <script src="js/checkout.js"></script>
 </body>
