@@ -14,7 +14,7 @@ const PAYMENT_LINKS = {
 
 // Formspree endpoint for order capture
 // Create free form at https://formspree.io
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeyznvp';
 
 // ============================================
 // MODAL
