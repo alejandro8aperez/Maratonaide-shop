@@ -1,103 +1,125 @@
-// ============================================
-// MARATONaide Shop — Checkout
-// ============================================
+// MARATONaide Shop — checkout hand-off
+// The payment itself is processed exclusively by Wompi.
 
-// ============================================
-// CONFIGURATION
-// Replace with your Wompi payment links
-// ============================================
 const PAYMENT_LINKS = {
-    'es': 'https://checkout.wompi.co/l/VPOS_axGQjW',
-    'en': 'https://checkout.wompi.co/l/VPOS_axGQjW',
-    'fr': 'https://checkout.wompi.co/l/VPOS_axGQjW'
+    es: 'https://checkout.wompi.co/l/VPOS_axGQjW',
+    en: 'https://checkout.wompi.co/l/VPOS_axGQjW',
+    fr: 'https://checkout.wompi.co/l/VPOS_axGQjW'
 };
 
-// Formspree endpoint for order capture
-// Create free form at https://formspree.io
+// Formspree records a *payment request*, never a completed order. Payment must
+// be confirmed in Wompi before the digital files are delivered.
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeyznvp';
 
-// ============================================
-// MODAL
-// ============================================
+const MESSAGES = {
+    es: {
+        sending: 'Registrando tus datos de entrega…',
+        error: 'No pudimos registrar el pedido. Revisa tu conexión e inténtalo de nuevo antes de pagar.',
+        invalidPayment: 'El enlace de pago no está disponible. Por favor, inténtalo más tarde.',
+        pending: 'Solicitud de pago MARATONaide'
+    },
+    en: {
+        sending: 'Saving your delivery details…',
+        error: 'We could not save your order. Check your connection and try again before paying.',
+        invalidPayment: 'The payment link is not available. Please try again later.',
+        pending: 'MARATONaide payment request'
+    },
+    fr: {
+        sending: 'Enregistrement de vos coordonnées de livraison…',
+        error: 'Nous n’avons pas pu enregistrer votre commande. Vérifiez votre connexion et réessayez avant de payer.',
+        invalidPayment: 'Le lien de paiement n’est pas disponible. Veuillez réessayer plus tard.',
+        pending: 'Demande de paiement MARATONaide'
+    }
+};
+
+let lastFocusedElement = null;
+
 function checkout(lang) {
+    lastFocusedElement = document.activeElement;
     document.getElementById('order-lang').value = lang;
-    document.getElementById('order-product').value = 'maratonaide-' + lang;
+    document.getElementById('order-product').value = `maratonaide-${lang}`;
+    document.getElementById('form-status').textContent = '';
     document.getElementById('order-modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
-
-    // Focus first input
     setTimeout(() => document.getElementById('order-name').focus(), 200);
 }
 
 function closeModal() {
     document.getElementById('order-modal').style.display = 'none';
     document.body.style.overflow = '';
+    if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
 }
 
-// Close on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && document.getElementById('order-modal').style.display !== 'none') {
+        closeModal();
+    }
 });
 
-// ============================================
-// FORM SUBMISSION
-// ============================================
-async function submitOrder(e) {
-    e.preventDefault();
+function isValidPaymentUrl(url) {
+    try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'https:' && parsed.hostname === 'checkout.wompi.co';
+    } catch {
+        return false;
+    }
+}
+
+async function submitOrder(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('order-form');
+    if (!form.reportValidity()) return;
 
     const lang = document.getElementById('order-lang').value;
-    const name = document.getElementById('order-name').value.trim();
-    const email = document.getElementById('order-email').value.trim();
-    const phone = document.getElementById('order-phone').value.trim();
-    const address = document.getElementById('order-address').value.trim();
-    const city = document.getElementById('order-city').value.trim();
-    const dept = document.getElementById('order-dept').value.trim();
+    const copy = MESSAGES[lang] || MESSAGES.es;
+    const paymentUrl = PAYMENT_LINKS[lang];
+    const status = document.getElementById('form-status');
+    const button = document.querySelector('.modal-submit');
+    const originalMarkup = button.innerHTML;
 
-    if (!name || !email || !phone || !address || !city) {
-        alert(lang === 'es' ? 'Por favor completa todos los campos obligatorios.'
-            : lang === 'en' ? 'Please fill in all required fields.'
-            : 'Veuillez remplir tous les champs obligatoires.');
+    if (!isValidPaymentUrl(paymentUrl)) {
+        status.textContent = copy.invalidPayment;
         return;
     }
 
-    const btn = document.querySelector('.modal-submit');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '...';
-    btn.disabled = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    status.textContent = copy.sending;
+
+    const name = document.getElementById('order-name').value.trim();
+    const email = document.getElementById('order-email').value.trim();
+    const phone = document.getElementById('order-phone').value.trim();
+    const reference = `MARA-${lang.toUpperCase()}-${Date.now().toString(36).toUpperCase()}`;
 
     try {
-        // Send order to Formspree (saves to your email/dashboard)
-        await fetch(FORMSPREE_ENDPOINT, {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                _subject: `Nuevo pedido MARATONaide [${lang.toUpperCase()}]`,
+                _subject: `${copy.pending} [${reference}]`,
+                reference,
+                estado: 'Pendiente de pago en Wompi',
                 nombre: name,
-                email: email,
-                telefono: phone,
-                direccion: address,
-                ciudad: city,
-                departamento: dept,
+                email,
+                telefono: phone || 'No informado',
                 idioma: lang.toUpperCase(),
                 producto: 'MARATONaide — PDF + EPUB',
-                precio: '$9.99 USD'
+                precio_publicado: 'Confirmar en checkout de Wompi',
+                origen: window.location.href,
+                submitted_at: new Date().toISOString()
             })
         });
 
-        // Redirect to Wompi payment
-        window.open(PAYMENT_LINKS[lang], '_blank');
+        if (!response.ok) throw new Error(`Form capture failed: ${response.status}`);
 
-        // Reset form and close modal
-        document.getElementById('order-form').reset();
-        closeModal();
-
+        sessionStorage.setItem('maratonaide-payment-reference', reference);
+        window.location.assign(paymentUrl);
     } catch (error) {
-        console.error('Order error:', error);
-        // Still redirect to payment even if form capture fails
-        window.open(PAYMENT_LINKS[lang], '_blank');
-        closeModal();
+        console.error('Unable to register payment request:', error);
+        status.textContent = copy.error;
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.innerHTML = originalMarkup;
     }
-
-    btn.innerHTML = originalText;
-    btn.disabled = false;
 }

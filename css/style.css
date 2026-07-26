@@ -604,6 +604,29 @@ body {
     opacity: 0.5;
 }
 
+.form-consent {
+    margin-top: 20px;
+}
+
+.consent-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-muted) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 400;
+    letter-spacing: normal !important;
+    line-height: 1.5;
+    text-transform: none !important;
+}
+
+.consent-label input {
+    width: auto !important;
+    margin-top: 4px;
+    accent-color: var(--accent);
+}
+
 .form-row {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -632,12 +655,28 @@ body {
     width: 100%;
 }
 
+.modal-submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+    transform: none;
+    box-shadow: none;
+}
+
 .modal-note {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.8rem;
     margin-top: 16px;
     line-height: 1.5;
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin-top: 12px;
+    color: #f1bd72;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    text-align: center;
 }
 
 @media (max-width: 600px) {

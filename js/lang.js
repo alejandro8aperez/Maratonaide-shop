@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const langBtns = document.querySelectorAll('.lang-btn');
     const html = document.documentElement;
 
-    // Check saved language
-    const savedLang = localStorage.getItem('maratonaide-lang') || 'es';
+    // Check saved language. Ignore stale or malformed saved values.
+    const storedLang = localStorage.getItem('maratonaide-lang');
+    const savedLang = ['es', 'en', 'fr'].includes(storedLang) ? storedLang : 'es';
     setLanguage(savedLang);
 
     langBtns.forEach(btn => {
@@ -23,16 +24,24 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         });
 
-        // Update all translatable elements
+        // Update visible copy and document metadata.
         document.querySelectorAll('[data-es]').forEach(el => {
             const text = el.dataset[lang];
-            if (text) {
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = text;
-                } else {
-                    el.innerHTML = text;
-                }
+            if (!text) return;
+
+            if (el.tagName === 'META') {
+                el.content = text;
+            } else {
+                el.innerHTML = text;
             }
+        });
+
+        document.querySelectorAll('[data-placeholder-es]').forEach(el => {
+            el.placeholder = el.dataset[`placeholder${lang[0].toUpperCase()}${lang.slice(1)}`] || '';
+        });
+
+        document.querySelectorAll('[data-aria-label-es]').forEach(el => {
+            el.setAttribute('aria-label', el.dataset[`ariaLabel${lang[0].toUpperCase()}${lang.slice(1)}`] || '');
         });
     }
 });
