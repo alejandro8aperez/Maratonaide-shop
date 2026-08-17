@@ -3,15 +3,15 @@
 
 const PAYMENT_LINKS = {
     es: 'https://checkout.wompi.co/l/VPOS_axGQjW',
-    en: 'https://checkout.wompi.co/l/VPOS_axGQjW',
-    fr: 'https://checkout.wompi.co/l/VPOS_axGQjW'
+    en: 'PENDIENTE: Crear link Wompi para edición EN',
+    fr: 'PENDIENTE: Crear link Wompi para edición FR'
 };
 
 // Formspree records a *payment request*, never a completed order. Payment must
 // be confirmed in Wompi before the digital files are delivered.
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeyznvp';
 
-const MESSAGES = {
+    const MESSAGES = {
     es: {
         sending: 'Registrando tus datos de entrega…',
         error: 'No pudimos registrar el pedido. Revisa tu conexión e inténtalo de nuevo antes de pagar.',
@@ -26,8 +26,8 @@ const MESSAGES = {
     },
     fr: {
         sending: 'Enregistrement de vos coordonnées de livraison…',
-        error: 'Nous n’avons pas pu enregistrer votre commande. Vérifiez votre connexion et réessayez avant de payer.',
-        invalidPayment: 'Le lien de paiement n’est pas disponible. Veuillez réessayer plus tard.',
+        error: 'Nous n\'avons pas pu enregistrer votre commande. Vérifiez votre connexion et réessayez avant de payer.',
+        invalidPayment: 'Le lien de paiement n\'est pas disponible. Veuillez réessayer plus tard.',
         pending: 'Demande de paiement MARATONaide'
     }
 };
@@ -105,7 +105,7 @@ async function submitOrder(event) {
                 telefono: phone || 'No informado',
                 idioma: lang.toUpperCase(),
                 producto: 'MARATONaide — PDF + EPUB',
-                precio_publicado: 'Confirmar en checkout de Wompi',
+                precio: '$45.000 COP',
                 origen: window.location.href,
                 submitted_at: new Date().toISOString()
             })

@@ -333,6 +333,14 @@ body {
     line-height: 1.6;
 }
 
+.phil-more {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 24px;
+    font-style: italic;
+}
+
 /* BUY */
 .buy {
     padding: 120px 0;
@@ -435,6 +443,33 @@ body {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.85rem;
+}
+
+.delivery-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delivery-item h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.delivery-item p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 /* AUTHOR */
@@ -727,6 +762,11 @@ body {
     .buy-cards {
         grid-template-columns: 1fr;
         max-width: 320px;
+    }
+
+    .delivery-info {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .author-grid {
