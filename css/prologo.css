@@ -1,0 +1,175 @@
+/* ============================================
+   MARATONaide — Prólogo Page
+   ============================================ */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.nav-back:hover {
+    color: var(--accent);
+}
+
+/* PROLOGUE */
+.prologue {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+}
+
+.prologue-header {
+    text-align: center;
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+}
+
+.prologue-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.prologue-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.prologue-title span {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.prologue-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* BODY */
+.prologue-body {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--text);
+}
+
+.prologue-body p {
+    margin-bottom: 28px;
+    text-indent: 2em;
+}
+
+.prologue-body p:first-child {
+    text-indent: 0;
+}
+
+.prologue-body p:first-child::first-letter {
+    font-size: 3.2em;
+    float: left;
+    line-height: 0.8;
+    padding-right: 8px;
+    padding-top: 4px;
+    color: var(--accent);
+    font-weight: 900;
+}
+
+.prologue-body strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.prologue-highlight {
+    font-style: italic;
+    color: var(--accent) !important;
+    text-align: center;
+    text-indent: 0 !important;
+    font-size: 1.25rem;
+    padding: 16px 0;
+}
+
+.prologue-finale {
+    text-align: center;
+    text-indent: 0 !important;
+    font-size: 1.4rem;
+    padding: 32px 0 16px;
+}
+
+.prologue-coda {
+    text-align: center;
+    text-indent: 0 !important;
+    font-style: italic;
+    color: var(--text-muted) !important;
+    font-size: 1.05rem;
+    padding-top: 8px;
+}
+
+.prologue-break {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    padding: 32px 0;
+}
+
+/* CTA */
+.prologue-cta {
+    text-align: center;
+    padding: 64px 0 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .prologue {
+        padding: 100px 20px 60px;
+    }
+
+    .prologue-title {
+        font-size: 2.5rem;
+    }
+
+    .prologue-body {
+        font-size: 1.05rem;
+        line-height: 1.9;
+    }
+
+    .prologue-body p:first-child::first-letter {
+        font-size: 2.6em;
+    }
+
+    .prologue-finale {
+        font-size: 1.2rem;
+    }
+
+    .nav-back {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .prologue-title {
+        font-size: 2rem;
+    }
+
+    .prologue-body {
+        font-size: 1rem;
+    }
+}
