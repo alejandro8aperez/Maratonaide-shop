@@ -1,53 +1,35 @@
 # Prólogo
 
-La humanidad había llegado a un punto en el que la intelectualidad parecía dominarlo todo. La cabeza había tomado el mando. Pensaba, organizaba, clasificaba, juzgaba, descartaba. Vivíamos en una época que premiaba al que pensaba más rápido, al que argumentaba mejor, al que encontraba una respuesta antes de que terminara de formularse la pregunta.
+Mi padre pronunció un número con el último aliento. No dijo mi nombre. No pidió perdón, ni agua, ni alguien que le rezara.
 
-La cabeza quería comprenderlo todo. Ponerle nombre a todo. Encontrar una explicación para todo. Pero había algo que nunca había podido gobernar: el latido del corazón.
+La enfermera había apagado el televisor del pasillo y en el cuarto solo quedaba el olor a desinfectante y un pitido del monitor: corto, paciente, marcando el tiempo de los que todavía estaban. Mi padre abrió los ojos, buscó mi cara sin encontrarla del todo —los ojos se le aquietaban como se aquieta el agua— y dijo:
 
-Su padre lo había sabido muchos años antes. Por eso no le dejó libros de filosofía. No le dejó tratados de teología. No le dejó respuestas. Le dejó cuadernos. Siete cuadernos. En ellos había un sistema de notación que ningún académico habría podido descifrar, porque aquellos signos no habían sido escritos para ser comprendidos por la cabeza. Habían sido escritos para los pies. Para ser leídos mientras se corría. Para ser descifrados cuando el cuerpo comenzara a cansarse, cuando la respiración se hiciera pesada, cuando una rodilla protestara y cuando el pulso encontrara un ritmo que ya no obedeciera a la voluntad.
+—Dos. Cero. Tres. Ocho.
 
-Su padre no explicaba. Mostraba. No decía "piensa esto". Decía "corre esto". Porque había verdades que solamente podían comprenderse cuando el cuerpo las padecía. Y había preguntas que solo podían responderse cuando la mente, agotada de buscar respuestas, finalmente se callaba.
+Cuatro palabras sueltas, con una pausa entre cada una, como quien deja caer cuatro monedas en un frasco vacío. Después cerró los ojos, y el monitor encontró una línea que ya no doblaba hacia ningún lado.
 
-Y una palabra aparecía una y otra vez en aquellos cuadernos: **Juan**. No Pedro. Juan. El discípulo amado. El hombre que había reclinado la cabeza sobre el pecho del Maestro y había escuchado algo que los demás no podían escuchar. Los latidos.
+Cuando la enfermera preguntó la hora, miró el reloj de mi padre, todavía prendido a su muñeca. Marcaba las siete y veinte. El de la pared marcaba casi seis y quince. Mi padre lo llevaba adelantado cinco minutos desde hacía treinta años, para llegar primero a todas partes. La pila se le acabó con él. El reloj sigue parado en un cajón, junto a una foto de mi mamá, cumpliendo para siempre una hora equivocada.
 
-Durante siglos, algunos escritores y pensadores hablaron de las «dos iglesias». La Iglesia de Pedro y la Iglesia de Juan. Dos épocas. Dos funciones. Dos maneras de comprender el mismo misterio. Pedro representaba la estructura visible, la organización, la autoridad, la doctrina. Juan representaba la vida interior. El misterio. El corazón.
+Dos, cero, tres, ocho. El número con el que corrió su única maratón, en los ochentas, en esta misma ciudad. Yo tenía nueve años, y de esa carrera guardo una sola imagen prestada: mi madre me la contó tantas veces que dejó de ser recuerdo. Mi padre cruzando la meta con los brazos en cruz, sin nadie que lo esperara. Un hombre aplaudiéndose solo.
 
-Algunos anunciaron el final de la Iglesia de Pedro y el nacimiento de una Iglesia de Juan. Pero Runy comprendió que habían cometido un error. Habían querido convertir una diferencia de funciones en una lucha por el poder. Habían intentado que el corazón reemplazara a la cabeza. Y el corazón no había venido para reemplazar a nadie.
+Fue profesor de cálculo numérico y de programación durante treinta y un años. Después del diagnóstico, la mano derecha le temblaba tanto que no podía llevarse la cuchara a la boca sin ruido; pero cuando escribía números la mano se le aquietaba, como si las cifras tuvieran un peso que las sostuviera. Nunca me dijo te quiero. Me dijo: cambia las llantas antes de diciembre. Me dijo: en la primera curva de la loma no metas primera, que ahí se funden los embragues. Tardé media vida en entender que aquellas instrucciones eran su única traducción de una palabra más grande.
 
-Juan lo sabía. Había vivido muchos años más que Pedro. Podría haber reclamado autoridad. Podría haberse presentado como sucesor. Pero no lo hizo. Porque Juan había comprendido algo que parecía sencillo y, sin embargo, contenía un misterio enorme: el corazón no necesita convertirse en cabeza para gobernar la vida.
+No me dejó cartas. Me dejó siete cartulinas de tres por cinco pulgadas.
 
-Pedro podía conducir. Juan podía mantener viva la llama. No eran enemigos. Eran funciones diferentes de un mismo organismo.
+Estaban en el cajón del nochero, en una bolsa plástica amarilla amarrada con lana roja. Siete tarjetas escolares, escritas con una letra menuda e inclinada que reconocí antes que la firma de cualquier banco. No eran diarios. Había números en los márgenes. Flechas que subían y bajaban. Cruces con puntos, ceros tachados, líneas que se doblaban sobre sí mismas como alambre reutilizado.
 
-Runy pasó gran parte de su vida intentando vivir desde la cabeza. Calculaba. Medía. Comparaba. Necesitaba entender antes de actuar. Necesitaba tener garantías antes de arriesgarse. Hasta que comenzó a correr.
+Y dibujos. Un hombre sentado en un trono de piedra, con un cetro en la derecha y un orbe girando sobre la izquierda. Una mujer de pie, con una corona de estrellas y las manos abiertas. Un león de piedra, agrietado, con la boca abierta. Y en varias márgenes, repetida sin explicación, una figura de capa, sin rostro, siempre a la misma distancia de los bordes: muy cerca.
 
-La maratón tenía una crueldad particular: no permitía mentirse durante demasiado tiempo.
+Pasé años creyendo que aquellas tarjetas eran la demencia ordenada de un hombre solo. El descifrado me costó varios meses, en la mesa de la cocina, con tablas de frecuencia y conteos hechos con palitos. Al principio supuse que los números al margen eran tiempos de aquella maratón del pasado. Fui a buscar las marcas oficiales. Ninguna cifra coincidió.
 
-Al principio, la cabeza mandaba. Marcaba el ritmo. Calculaba los kilómetros. Miraba el reloj. Pensaba en la meta. Pensaba en el tiempo. Pensaba en los demás corredores. Pero después de treinta kilómetros, la cabeza empezaba a perder autoridad. Después de treinta y cinco, negociaba. Después de cuarenta, suplicaba. Y cuando quedaban los últimos metros, ya no podía mandar. Entonces aparecía otra voz. No venía de afuera. Venía de adentro. El corazón.
+Una madrugada de octubre volví a correr las columnas y vi que los mismos valores regresaban con una regularidad que ningún cronómetro habría tolerado. Entonces entendí que no eran tiempos de carrera. Eran cuentas de respiración: pasos por frase, inhalaciones por renglón, el ritmo exacto al que cada tarjeta se volvía legible. Mi padre había cifrado las tarjetas con el cuerpo.
 
-Fue entonces cuando Runy comprendió quiénes eran aquellos que su padre había llamado, en uno de los cuadernos, **los Maratonistas**.
+En la última tarjeta no había dibujos. Solo una línea, más grande que el resto, temblorosa de un modo que no era vejez sino decisión:
 
-No eran una élite. No eran santos. No eran filósofos. No poseían ningún conocimiento superior. No estaban destinados a dirigir a nadie. Eran, simplemente, personas capaces de escuchar. Algunos percibían el latido de algo que pertenecía no solamente a un hombre, sino a toda la humanidad. Un corazón común. Un corazón que latía detrás de las religiones, detrás de las filosofías, detrás de las ciencias, detrás del arte. Detrás de todas aquellas cosas que los hombres habían construido para intentar comprender el misterio de estar vivos.
+—El niño va a estar. Va a correr contigo. No le tengas miedo.
 
-Como Juan. Juan no sustituyó a Pedro. No reclamó el gobierno de la Iglesia. Su lugar era otro: mantener vivo el corazón. Y quizá esa era también la tarea de los Maratonistas. No dirigir. Simplemente estar atentos. Servir cuando apareciera la oportunidad. Recordar que detrás de cada estructura humana existía una vida que debía ser protegida. Porque una estructura sin vida era solamente una estructura. Y una cabeza sin corazón podía seguir pensando durante mucho tiempo. Pero ya no sabía para qué.
+Yo no soy corredor. Soy un hombre de cincuenta y dos años que vivió de espaldas a su cuerpo, administrándolo como se administra un vehículo ajeno: revisión, gasolina, llantas. Tengo la rodilla izquierda operada dos veces y un médico de voz de radio vieja que me mostró mi propia radiografía como quien muestra un accidente: «Correr, olvídelo. Camine, nade, baile si quiere. Correr, no».
 
-Runy todavía no sabía que era uno de ellos. Hasta ese momento había creído que corría contra otros. Contra el reloj. Contra el cansancio. Contra la distancia. Contra sus propios límites. Pero allí, cuando ya no quedaba casi nada de carrera, comprendió que nunca había estado compitiendo contra nadie. Había estado escuchando. Todo el tiempo. Solo que no había sabido hacerlo.
+Pedí el dorsal por escrito. Expliqué que quería correr con el número de mi padre, que él había muerto pronunciándolo. La respuesta llegó al otro día: autorización para un dorsal conmemorativo, un sello azul. Dos, cero, tres, ocho.
 
-Entonces miró la piedra. La había cargado durante cuarenta y dos kilómetros. Había pensado que era un castigo. Ahora comprendía que no. Era una semilla. El tampoco había sido un enemigo. Había sido un mensajero. La figura de capa oscura no había venido para destruirlo. Había venido para mostrarle que existen fuerzas que no pueden ser vencidas. Solo pueden ser reconocidas.
-
-Y el niño que había corrido junto a él, sin sudar, sin cansarse, tampoco había venido para reemplazarlo. Era su espejo. La imagen de aquello que Runy nunca había sido: la máquina perfecta. El cuerpo que no protesta. Las piernas que no dudan. Pero Runy ya sabía algo que aquella perfección no podía enseñarle: ser humano significaba precisamente lo contrario. Sentir. Cansarse. Tener miedo. Caer. Levantarse. Continuar.
-
-Los siete cuadernos no contenían instrucciones. Su padre no quería enseñarle cómo terminar una maratón. Quería enseñarle cómo escucharla.
-
-Una maratón no era una religión. No era una filosofía. No era un método para convertirse en alguien superior. Era apenas un fermento. Una enzima. Un pequeño estímulo dentro del organismo enorme de la vida humana.
-
-Correr no era llegar. Correr era escuchar. Y quizá la vida tampoco consistía en llegar. Quizá consistía en aprender a escuchar mientras se caminaba. El camino se hacía al andar. Pero algunas verdades solo aparecían cuando los pies ya no querían dar un paso más.
-
-La maratón era, en sí misma, un arcano. No porque escondiera una fórmula secreta. Sino porque contenía un misterio que solamente podía revelarse cuando el cuerpo llegaba a su límite. Era una puerta. Una pequeña representación del Misterio del Segundo Nacimiento. Porque para nacer de nuevo, primero había que dejar morir algo.
-
-Y en aquellos últimos metros, algo había muerto dentro de Runy. Había muerto el hombre que necesitaba comprenderlo todo. Había muerto el hombre que quería controlar el camino. Había muerto el hombre que confundía llegar con vencer. Había muerto la necesidad de tener respuestas. Y cuando la mente finalmente dejó de luchar, apareció algo que siempre había estado allí. El latido. Uno. Dos. Uno. Dos. No era una orden. No era una explicación. No era una teoría. Era vida.
-
-Runy corrió los últimos metros sin preguntar cuánto faltaba. Sin mirar el reloj. Sin pensar en el tiempo. Sin pensar en los demás. Solo escuchó. Y por primera vez comprendió lo que su padre había intentado decirle durante toda su vida: que la cabeza no debía ser destruida, que el corazón no debía gobernar, que Pedro no debía convertirse en Juan, ni Juan en Pedro. Que cada uno tenía su lugar. Y que el verdadero misterio no estaba en decidir quién debía mandar. Estaba en aprender a correr cuando ambos, cabeza y corazón, finalmente encontraban el mismo ritmo.
-
-Y cuando cruzó la meta, Runy no llegó. **Escuchó.**
-
-Porque hay un momento en la vida en que la mente, después de haber hablado durante años, finalmente guarda silencio. Entonces el corazón no tiene que vencer. No tiene que mandar. No tiene que explicar. Solo tiene que hacer aquello que siempre ha sabido hacer. Latir. Y, por primera vez, latir sin permiso de la cabeza.
+Una maratón mide cuarenta y dos mil ciento noventa y cinco metros. La cifra es exacta: está en los reglamentos, en los relojes, en las medallas. Nadie te dice, antes de correrla, que la carrera entera cabe dentro de los últimos ciento noventa y cinco metros. Nadie puede decírtelo, porque hasta esos metros todos somos gente corriendo, y a partir de ahí empieza otra cosa para la que no hay entrenamiento.
