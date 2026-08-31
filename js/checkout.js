@@ -8,7 +8,7 @@ const PAYMENT_LINKS = {
 };
 
 // Formspree records a *payment request*, never a completed order. Payment must
-// be confirmed in Wompi before the digital files are delivered.
+// be confirmed in Wompi before the physical book is delivered.
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meeyznvp';
 
     const MESSAGES = {
@@ -104,7 +104,7 @@ async function submitOrder(event) {
                 email,
                 telefono: phone || 'No informado',
                 idioma: lang.toUpperCase(),
-                producto: 'MARATONaide — PDF + EPUB',
+                producto: 'MARATONaide — Libro físico',
                 precio: '$45.000 COP',
                 origen: window.location.href,
                 submitted_at: new Date().toISOString()

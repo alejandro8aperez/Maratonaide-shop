@@ -2,14 +2,15 @@
 
 La tienda está publicada como un sitio estático. El navegador puede enviar al
 cliente al checkout seguro de Wompi, pero no debe decidir por sí mismo si un
-pago fue aprobado. La entrega de un archivo digital debe ocurrir solamente
-después de que Wompi confirme la transacción.
+pago fue aprobado. El libro físico se entrega solamente después de que Wompi
+confirme la transacción.
 
 ## Datos del producto
 
-- **Producto:** MARATONaide — PDF + EPUB
+- **Producto:** MARATONaide — Libro físico impreso
 - **Precio:** $45.000 COP
-- **Entrega:** Dentro de 24 horas tras confirmación de pago (manual o automática)
+- **Formato:** Libro físico (no se vende PDF ni EPUB)
+- **Entrega:** En la feria (ExpoRunners, entrega directa) o envío dentro de Medellín por $12.000 tras confirmación de pago
 - **Contacto:** maratonaide@gmail.com
 
 ## Antes de publicar
@@ -28,24 +29,16 @@ después de que Wompi confirme la transacción.
    vendedor y que permite solicitudes desde el dominio publicado. Los mensajes
    recibidos con estado `Pendiente de pago en Wompi` son solicitudes: **no son
    comprobantes de pago**.
-5. Configura en Wompi una URL de redirección hacia el sitio y un webhook HTTPS
-   que reciba eventos de transacción. El webhook debe verificar la firma del
-   evento y entregar el PDF/EPUB solo con estado `APPROVED`, importe y SKU
-   esperados.
+5. Configura en Wompi una URL de redirección hacia el sitio. Revisa en el panel
+   de Wompi los pagos aprobados para poder despachar el libro físico con el
+   importe y SKU esperados.
 
-## Entrega automática
+## Despacho del libro físico
 
-GitHub Pages no puede recibir webhooks ni proteger secretos. Para automatizar
-la entrega se necesita un endpoint de servidor (por ejemplo, una función
-serverless) con estas responsabilidades:
+La entrega es manual y física (no hay descarga digital):
 
-1. Validar la firma del webhook de Wompi.
-2. Comprobar que la transacción está `APPROVED`, corresponde al monto ($45.000
-   COP) y SKU de MARATONaide y no se ha procesado antes.
-3. Guardar la orden y enviar al correo pagador los enlaces privados del PDF y
-   EPUB de la edición comprada.
-4. Marcar la transacción como entregada para que un reintento del webhook no
-   genere otro envío.
-
-Hasta que exista ese endpoint, concilia los pagos aprobados en el panel de
-Wompi con la solicitud recibida en Formspree y envía manualmente los archivos.
+1. Verifica en el panel de Wompi que la transacción está `APPROVED`, corresponde
+   al monto ($45.000 COP) y SKU de MARATONaide.
+2. Despacha el libro: entrega directa en la feria (ExpoRunners) o envío dentro
+   de Medellín por $12.000, usando la solicitud recibida en Formspree como
+   referencia del cliente.
