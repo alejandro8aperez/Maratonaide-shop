@@ -472,6 +472,34 @@ body {
     line-height: 1.6;
 }
 
+.shipping-title {
+    margin: 32px auto 0;
+    max-width: 900px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.shipping-logos {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto 0;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.shipping-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
 /* AUTHOR */
 .author {
     padding: 120px 0;
