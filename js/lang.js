@@ -1,20 +1,9 @@
 // Language switcher
+window.applyLanguage = null; // set below for external use
+
 document.addEventListener('DOMContentLoaded', () => {
     const langBtns = document.querySelectorAll('.lang-btn');
     const html = document.documentElement;
-
-    // Check saved language. Ignore stale or malformed saved values.
-    const storedLang = localStorage.getItem('maratonaide-lang');
-    const savedLang = ['es', 'en', 'fr'].includes(storedLang) ? storedLang : 'es';
-    setLanguage(savedLang);
-
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            setLanguage(lang);
-            localStorage.setItem('maratonaide-lang', lang);
-        });
-    });
 
     function setLanguage(lang) {
         html.lang = lang;
@@ -44,4 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
             el.setAttribute('aria-label', el.dataset[`ariaLabel${lang[0].toUpperCase()}${lang.slice(1)}`] || '');
         });
     }
+
+    // Expose so checkout.js can re-apply the language when opening the modal.
+    window.applyLanguage = (lang) => {
+        setLanguage(lang);
+        localStorage.setItem('maratonaide-lang', lang);
+    };
+
+    // Check saved language. Ignore stale or malformed saved values.
+    const storedLang = localStorage.getItem('maratonaide-lang');
+    const savedLang = ['es', 'en', 'fr'].includes(storedLang) ? storedLang : 'es';
+    setLanguage(savedLang);
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            setLanguage(lang);
+            localStorage.setItem('maratonaide-lang', lang);
+        });
+    });
 });

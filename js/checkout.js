@@ -36,6 +36,14 @@ let lastFocusedElement = null;
 
 function checkout(lang) {
     lastFocusedElement = document.activeElement;
+
+    // Ensure the modal follows the language of the button the user clicked /
+    // the language selected on the page. Re-apply the whole page language so
+    // the order form always opens in the right language (ES/EN/FR).
+    if (lang && typeof window.applyLanguage === 'function') {
+        window.applyLanguage(lang);
+    }
+
     document.getElementById('order-lang').value = lang;
     document.getElementById('order-product').value = `maratonaide-${lang}`;
     document.getElementById('form-status').textContent = '';
